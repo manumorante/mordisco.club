@@ -4,7 +4,7 @@ export const routes = {
   albums: '/album/2022MAY', // First album
 }
 
-export const albums = [
+export const ALBUMS = [
   {
     folder: '2022MAY',
     title: 'Budino, Moderna',

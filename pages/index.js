@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { albums } from 'data'
+import { ALBUMS } from 'data'
 import { getImagesFromFolder } from '@/lib/cloudinary/directory.js'
 import Layout from '@/app/Layout'
 import Albums from '@/ui/Albums'
@@ -10,6 +10,7 @@ import AlbumTitle from '@/ui/AlbumTitle'
 
 // getStaticProps
 export async function getStaticProps() {
+  const albums = [...ALBUMS]
   await Promise.all(
     albums.map(async (album) => {
       const images = await getImagesFromFolder(album.folder)
