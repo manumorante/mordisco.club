@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { photoUrl } from '@/lib/cloudinary/url.js'
+import cx from 'classnames'
 import { getGridItem } from '@/lib/grid.js'
 import Image from 'next/image'
 import Quote from './Quote'
@@ -64,7 +65,10 @@ export default function Grid({ items, gap = 20, openModal }) {
                   src={photoSrc}
                   width={gridItem.width}
                   height={gridItem.height}
-                  className='w-full h-full object-cover rounded-md'
+                  className={cx(
+                    'w-full h-full object-cover rounded-md cursor-pointer',
+                    'md:hover:opacity-80 transition-opacity duration-300 ease-in-out'
+                  )}
                   alt={`Image ${index}`}
                   priority={index < 6}
                 />

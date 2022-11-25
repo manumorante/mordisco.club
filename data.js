@@ -12,7 +12,7 @@ export const ALBUMS = [
     year: 2022,
     month: 'Noviembre',
     length: 0,
-    cover: '',
+    cover: 'https://res.cloudinary.com/nvzf/image/upload/v1669413702/mordisco/2022NOV/2905.jpg',
   },
   {
     folder: '2022MAY',
