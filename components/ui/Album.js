@@ -1,15 +1,17 @@
 import cx from 'classnames'
+import { routes } from 'data'
 import { photoUrl } from '@/lib/cloudinary/url.js'
 import Image from 'next/image'
 import Link from 'next/link'
-import { CameraIcon } from '@heroicons/react/24/outline'
 
 export default function Album({ album, active, className }) {
   if (!album) return null
 
   const width = 320
   const height = 320
-  const coverSrc = photoUrl({ url: album.cover, width, height, dpr: 2 })
+  const coverSrc = album?.cover
+    ? photoUrl({ url: album.cover, width, height, dpr: 2 })
+    : routes.defaultCover
 
   return (
     <Link
@@ -23,14 +25,16 @@ export default function Album({ album, active, className }) {
         },
         className
       )}>
-      <Image
-        className='border border-white/20 rounded-md w-full max-w-xs h-auto object-cover aspect-square'
-        src={coverSrc}
-        width={width}
-        height={height}
-        priority={true}
-        alt='Cover'
-      />
+      {coverSrc && (
+        <Image
+          className='border border-white/20 rounded-md w-full max-w-xs h-auto object-cover aspect-square'
+          src={coverSrc}
+          width={width}
+          height={height}
+          priority={true}
+          alt='Cover'
+        />
+      )}
 
       <div className='px-1 flex flex-col'>
         {/* Date */}

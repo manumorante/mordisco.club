@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import React, { useState, useEffect } from 'react'
-import { routes } from 'data'
 import cx from 'classnames'
-import Link from 'next/link'
 import Logo from './Logo'
 
 function Header() {

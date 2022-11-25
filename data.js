@@ -2,9 +2,18 @@ export const routes = {
   root: 'mordisco',
   home: '/album/2022MAY',
   albums: '/album/2022MAY', // First album
+  defaultCover: '/default-cover.gif',
 }
 
 export const ALBUMS = [
+  {
+    folder: '2022NOV',
+    title: 'Fabrizio Mammarella, Yahaira',
+    year: 2022,
+    month: 'Noviembre',
+    length: 0,
+    cover: '',
+  },
   {
     folder: '2022MAY',
     title: 'Budino, Moderna',

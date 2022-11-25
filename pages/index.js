@@ -7,6 +7,7 @@ import Grid from '@/ui/Grid'
 import Modal from '@/app/Modal'
 import BigPhoto from '@/ui/BigPhoto'
 import AlbumTitle from '@/ui/AlbumTitle'
+import ZeroCase from '@/ui/ZeroCase'
 
 // getStaticProps
 export async function getStaticProps() {
@@ -48,7 +49,11 @@ export default function HomePage({ albums }) {
       {albums.map((album, i) => (
         <section key={i}>
           <AlbumTitle album={album} />
-          <Grid items={album.images} openModal={openModal} />
+          {album?.images?.length > 0 ? (
+            <Grid items={album.images} openModal={openModal} />
+          ) : (
+            <ZeroCase />
+          )}
         </section>
       ))}
     </Layout>

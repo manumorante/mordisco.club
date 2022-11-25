@@ -7,6 +7,7 @@ import BigPhoto from '@/ui/BigPhoto'
 import Albums from '@/ui/Albums'
 import Grid from '@/ui/Grid'
 import AlbumTitle from '@/ui/AlbumTitle'
+import ZeroCase from '@/ui/ZeroCase'
 
 // getStaticPaths
 export async function getStaticPaths() {
@@ -50,7 +51,7 @@ export default function Album({ albumID, album, images }) {
       <Albums className='mb-8' albums={ALBUMS} activeID={albumID} />
 
       <AlbumTitle album={album} />
-      <Grid items={images} openModal={openModal} />
+      {images.length > 0 ? <Grid items={images} openModal={openModal} /> : <ZeroCase />}
     </Layout>
   )
 }
