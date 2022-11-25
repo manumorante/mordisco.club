@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { albums } from 'data'
+import { ALBUMS } from 'data'
 import { getImagesFromFolder } from '@/lib/cloudinary/directory.js'
 import Layout from '@/app/Layout'
 import Modal from '@/app/Modal'
@@ -10,7 +10,7 @@ import AlbumTitle from '@/ui/AlbumTitle'
 
 // getStaticPaths
 export async function getStaticPaths() {
-  const paths = albums.map((album) => ({
+  const paths = ALBUMS.map((album) => ({
     params: { albumID: album.folder },
   }))
 
@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 // getStaticProps
 export async function getStaticProps({ params }) {
   const { albumID } = params
-  const album = albums.find((album) => album.folder === albumID)
+  const album = ALBUMS.find((album) => album.folder === albumID)
   const images = await getImagesFromFolder(albumID)
   return { props: { albumID, album, images } }
 }
@@ -47,7 +47,7 @@ export default function Album({ albumID, album, images }) {
         <BigPhoto photo={modalImage} />
       </Modal>
 
-      <Albums className='mb-8' albums={albums} activeID={albumID} />
+      <Albums className='mb-8' albums={ALBUMS} activeID={albumID} />
 
       <AlbumTitle album={album} />
       <Grid items={images} openModal={openModal} />
