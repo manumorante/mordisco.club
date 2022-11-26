@@ -1,11 +1,17 @@
+import cx from 'classnames'
 import Album from '@/ui/Album'
 
 export default function Albums({ albums, activeID, className }) {
   return (
-    <div className={`Albums w-full flex gap-2 snap-x overflow-x-auto ${className}`}>
+    <div
+      className={cx(
+        'Albums xl:w-full flex gap-2 snap-x overflow-x-auto',
+        '-mx-5 px-5 xl:mx-0 xl:p-0',
+        className
+      )}>
       {albums.map((album, i) => (
         <Album
-          className='snap-proximity shrink-0 w-2/5'
+          className='snap-proximity shrink-0 w-[45%] xs:w-2/5 max-w-[230px]'
           album={album}
           active={album.folder === activeID}
           key={i}

@@ -44,7 +44,7 @@ export default function HomePage({ albums }) {
         <BigPhoto photo={modalImage} />
       </Modal>
 
-      <Albums className='mb-8' albums={albums} />
+      <Albums className='mb-8' albums={albums} activeID={albums[0]?.folder} />
 
       {albums.map((album, i) => (
         <section key={i}>

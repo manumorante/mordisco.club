@@ -16,8 +16,8 @@ const Quote = ({ index, style }) => {
       <div>
         <p
           className={cx('font-serif text-neutral-300 mb-4', {
-            'text-5xl': length <= 10,
-            'text-4xl': length > 10,
+            'text-4xl sm:text-5xl': length <= 10,
+            'text-3xl sm:text-4xl': length > 10,
           })}>
           {text}
         </p>
