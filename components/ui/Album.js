@@ -28,7 +28,7 @@ export default function Album({ album, active, className }) {
       <div className='w-full max-w-xs aspect-square relative'>
         {coverSrc && (
           <Image
-            className='w-full h-full object-cover rounded-md border border-white/50 sm:border-none'
+            className='w-full h-full object-cover rounded-md'
             src={coverSrc}
             width={width}
             height={height}
