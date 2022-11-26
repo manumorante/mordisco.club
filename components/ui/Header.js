@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import React, { useState, useEffect } from 'react'
 import cx from 'classnames'
+import { BeakerIcon } from '@heroicons/react/24/outline'
 import Logo from './Logo'
 
 function Header() {
@@ -31,24 +32,24 @@ function Header() {
         <div className={cx('mx-auto max-w-6xl h-full px-6', 'flex justify-between items-center')}>
           <a href='/#header' aria-label='Ir al inicio'>
             <Logo
-              className={cx('h-auto transition-all duration-500 ease-in-out', {
-                'w-44': !isSmall,
-                'w-36': isSmall,
-              })}
+              className={cx(
+                'h-auto transition-all duration-500 ease-in-out',
+                // W
+                'w-36',
+                { 'sm:w-44': !isSmall }
+              )}
             />
           </a>
 
           <a href='/hello' aria-label='Información del sitio y el autor'>
-            <div
+            <BeakerIcon
               className={cx(
-                'h-auto transition-all duration-500 ease-in-out text-right font-extralight ',
-                {
-                  'text-white/60 text-lg': !isSmall,
-                  'text-white/40 text-base': isSmall,
-                }
-              )}>
-              ¡Hola!
-            </div>
+                'h-auto',
+                'text-white/90 hover:text-white',
+                'transition-colors duration-300 ease-in-out',
+                'w-5 h-5'
+              )}
+            />
           </a>
         </div>
       </div>

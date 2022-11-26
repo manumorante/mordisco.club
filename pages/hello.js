@@ -7,60 +7,64 @@ import Layout from '@/app/Layout'
 export default function HelloPage() {
   return (
     <Layout>
-      <div className={cx('relative z-10 h-3/4', 'flex justify-center items-center', 'p-6')}>
-        <div className='Intro flex flex-col gap-10 items-center'>
+      <div className={cx('relative z-10', 'px-6')}>
+        <div className='Intro max-w-lg mx-auto text-2xl font-light'>
           {/* Title */}
           <div
             className={cx(
               'opacity-0 animate-[fade-in_1.2s_ease-in_0.6s_forwards]',
-              'text-left text-4xl font-extrabold',
+              'text-3xl sm:text-5xl font-extrabold',
+              'mb-8',
               // Gradient text
               'text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-600'
             )}>
-            ¿Dónde están las fotos, Manu?
+            Y las fotos...
+            <br />
+            ¿dónde están?
           </div>
 
           {/* Title */}
           <div
             className={cx(
               'opacity-0 animate-[fade-in_1s_ease-in_2.8s_forwards]',
-              'text-left text-2xl font-extralight ',
               // Gradient text
               'text-transparent bg-clip-text bg-gradient-to-r from-purple-100 to-purple-300'
             )}>
             <p className='mb-3'>
-              <b>¡Las fotos estarán aquí!</b> Y algunas en Instagram.
+              <b className='font-bold'>¡Hola!</b> las fotos estarán aquí en el{' '}
+              <b className='font-bold'>club</b>, nuestra nueva web{' '}
+              <a href='https://mordisco.club' className='font-bold'>
+                mordisco.club
+              </a>
             </p>
 
             <p className='mb-3'>
-              ¡Hola! esto será un proyecto personal de <b>Manu Morante</b> en colaboración y
-              homenaje a <b>Mordisco Club</b>.
+              Esto será un proyecto personal de <b>Manu Morante</b> en colaboración y homenaje a{' '}
+              <b>Mordisco</b>.
             </p>
 
-            <p className='mb-3'>Gracias por todos estos años.</p>
+            <p className='mb-3 font-extralight'>Gracias por todos estos años.</p>
           </div>
 
-          {/* CTA */}
-          <a
-            className='opacity-0 animate-[fade-in_1s_ease-in_3.8s_forwards]'
-            href='mailto:manu@mordisco.club'>
-            <div className='p-0.5 bg-gradient-to-tr from-purple-300 via-violet-500 to-pink-700 rounded-2xl'>
-              <div className='opacity-70 px-5 py-2 bg-black rounded-2xl text-lg font-medium text-pink-200'>
-                SUGERENCIAS (MANU)
-              </div>
-            </div>
-          </a>
-
-          {/* CTA */}
-          <Link
-            className='opacity-0 animate-[fade-in_1s_ease-in_3.8s_forwards]'
-            href='/album/2022MAY'>
-            <div className='p-0.5 bg-gradient-to-tr from-purple-300 via-violet-500 to-pink-700 rounded-2xl'>
+          {/* <div className='mt-12 opacity-0 animate-[fade-in_1s_ease-in_3.8s_forwards]'>
+            <Link
+              className='inline-block p-0.5 bg-gradient-to-tr from-purple-300 via-violet-500 to-pink-700 rounded-2xl'
+              href='/album/2022MAY'>
               <div className='opacity-70 px-5 py-2 bg-black rounded-2xl text-lg font-medium text-pink-200'>
                 VER FOTOS
               </div>
-            </div>
-          </Link>
+            </Link>
+
+            <p className='foo'>Envia sugerencias</p>
+
+            <a
+              className='inline-block p-0.5 bg-gradient-to-tr from-purple-300 via-violet-500 to-pink-700 rounded-2xl'
+              href='mailto:manu@mordisco.club'>
+              <div className='opacity-70 px-5 py-2 bg-black rounded-2xl text-lg font-medium text-pink-200'>
+                SUGERENCIAS (MANU)
+              </div>
+            </a>
+          </div> */}
         </div>
       </div>
 
