@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
 import SpinnerWiggle from '@/ui/SpinnerWiggle'
 import cx from 'classnames'
 
@@ -17,13 +16,13 @@ function Photo({ photo, isBig, className }) {
 
   return (
     <div className='Photo relative w-full h-full'>
-      <Image
+      <img
         alt={`Photo ${photo.id}`}
         className={cx({ 'opacity-0 blur-sm': loading }, className)}
         src={src}
         width={width}
         height={height}
-        onLoadingComplete={() => setLoading(false)}
+        onLoad={() => setLoading(false)}
       />
 
       {loading && <SpinnerWiggle fullScreen />}

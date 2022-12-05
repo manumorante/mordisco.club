@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import cx from 'classnames'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import Image from 'next/image'
 import SpinnerWiggle from './SpinnerWiggle'
 import Button from '@/ui/Button'
 
@@ -29,7 +28,7 @@ export default function Modal({ isOpen, setIsOpen, photo }) {
       <div className='absolute inset-0 bg-black/90'></div>
 
       {photo && (
-        <Image
+        <img
           alt={`Photo ${photo.id}`}
           className={cx(
             'absolute w-full h-full object-contain',

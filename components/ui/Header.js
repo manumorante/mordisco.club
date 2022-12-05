@@ -44,7 +44,6 @@ function Header() {
           <a href='/hello' aria-label='Información del sitio y el autor'>
             <BeakerIcon
               className={cx(
-                'h-auto',
                 'text-white/90 hover:text-white',
                 'transition-colors duration-300 ease-in-out',
                 'w-5 h-5'

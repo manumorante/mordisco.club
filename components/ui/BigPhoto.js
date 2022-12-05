@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
 import { photoBigUrl } from '@/lib/cloudinary/url.js'
-import Image from 'next/image'
 
 export default function BigPhoto({ photo: _photo }) {
   const elRef = useRef(null)
@@ -23,12 +22,12 @@ export default function BigPhoto({ photo: _photo }) {
   return (
     <div ref={elRef}>
       {photo && (
-        <Image
+        <img
           className='absolute z-20 w-full h-full object-contain'
           src={photo.url}
           width={photo.width}
           height={photo.height}
-          alt={`Photo`}
+          alt='Photo'
         />
       )}
     </div>

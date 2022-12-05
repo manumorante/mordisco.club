@@ -1,7 +1,5 @@
 import cx from 'classnames'
-import Image from 'next/image'
 import imageLightsLg from 'public/mordisco-lights-lg.jpg'
-import Link from 'next/link'
 import Layout from '@/app/Layout'
 
 export default function HelloPage() {
@@ -75,7 +73,7 @@ export default function HelloPage() {
           'opacity-0 animate-[fade-in_5s_ease-in_1s_forwards]',
           'fixed z-0 top-1/2 right-0 bottom-0 left-0'
         )}>
-        <Image
+        <img
           className={cx(
             'animate-[hue-rotate_8s_linear_infinite]',
             'w-full h-full max-w-none object-cover object-top'

@@ -1,7 +1,6 @@
 import cx from 'classnames'
 import { routes } from 'data'
 import { photoUrl } from '@/lib/cloudinary/url.js'
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Album({ album, active, className }) {
@@ -27,12 +26,11 @@ export default function Album({ album, active, className }) {
       )}>
       <div className='w-full max-w-xs aspect-square relative'>
         {coverSrc && (
-          <Image
+          <img
             className='w-full h-full object-cover rounded-md'
             src={coverSrc}
             width={width}
             height={height}
-            priority={true}
             alt='Cover'
           />
         )}
