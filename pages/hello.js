@@ -1,6 +1,6 @@
 import cx from 'classnames'
 import imageLightsLg from 'public/mordisco-lights-lg.jpg'
-import Layout from 'components/app/Layout'
+import { Layout } from 'components/app'
 
 export default function HelloPage() {
   return (

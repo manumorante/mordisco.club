@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import cx from 'classnames'
 import { BeakerIcon } from '@heroicons/react/24/outline'
-import Logo from './Logo'
+import { Logo } from 'components/ui'
 
 function Header() {
   const [isSmall, seIsSmall] = useState(false)

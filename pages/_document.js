@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import Gtag from 'components/app/Gtag'
+import { Gtag } from 'components/app'
 
 export default function Document() {
   return (

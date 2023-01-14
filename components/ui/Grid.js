@@ -3,7 +3,7 @@ import { photoUrl } from 'lib/cloudinary/url.js'
 import cx from 'classnames'
 import { getGridItem } from 'lib/grid.js'
 import { incrementKey } from 'lib/useCount.js'
-import Quote from './Quote'
+import { Quote } from 'components/ui'
 
 export default function Grid({ items, gap = 20, openModal }) {
   const gridRef = useRef(null)
