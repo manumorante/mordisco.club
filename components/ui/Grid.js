@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { photoUrl } from '@/lib/cloudinary/url.js'
+import { photoUrl } from 'lib/cloudinary/url.js'
 import cx from 'classnames'
-import { getGridItem } from '@/lib/grid.js'
-import { incrementKey } from '@/lib/useCount.js'
+import { getGridItem } from 'lib/grid.js'
+import { incrementKey } from 'lib/useCount.js'
 import Quote from './Quote'
 
 export default function Grid({ items, gap = 20, openModal }) {

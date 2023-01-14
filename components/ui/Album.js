@@ -1,6 +1,6 @@
 import cx from 'classnames'
 import { routes } from 'data'
-import { photoUrl } from '@/lib/cloudinary/url.js'
+import { photoUrl } from 'lib/cloudinary/url.js'
 import Link from 'next/link'
 
 export default function Album({ album, active, className }) {

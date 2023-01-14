@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { ALBUMS } from 'data'
-import { getImagesFromFolder } from '@/lib/cloudinary/directory.js'
-import Layout from '@/app/Layout'
-import Modal from '@/app/Modal'
-import BigPhoto from '@/ui/BigPhoto'
-import Albums from '@/ui/Albums'
-import Grid from '@/ui/Grid'
-import AlbumTitle from '@/ui/AlbumTitle'
-import ZeroCase from '@/ui/ZeroCase'
+import { getImagesFromFolder } from 'lib/cloudinary/directory.js'
+import Layout from 'components/app/Layout'
+import Modal from 'components/app/Modal'
+import BigPhoto from 'components/ui/BigPhoto'
+import Albums from 'components/ui/Albums'
+import Grid from 'components/ui/Grid'
+import AlbumTitle from 'components/ui/AlbumTitle'
+import ZeroCase from 'components/ui/ZeroCase'
 
 // getStaticPaths
 export async function getStaticPaths() {

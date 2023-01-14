@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import SpinnerWiggle from '@/ui/SpinnerWiggle'
+import SpinnerWiggle from 'components/ui/SpinnerWiggle'
 import cx from 'classnames'
 
 function Photo({ photo, isBig, className }) {

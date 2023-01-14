@@ -1,6 +1,6 @@
 import cx from 'classnames'
 import imageLightsLg from 'public/mordisco-lights-lg.jpg'
-import Layout from '@/app/Layout'
+import Layout from 'components/app/Layout'
 
 export default function HelloPage() {
   return (
@@ -79,7 +79,7 @@ export default function HelloPage() {
             'w-full h-full max-w-none object-cover object-top'
           )}
           alt='Bonitas luces de una fiesta de Mordisco Club'
-          src={imageLightsLg}
+          src={imageLightsLg.src}
           width={2500}
           height={1188}
         />

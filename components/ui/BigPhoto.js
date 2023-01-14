@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { photoBigUrl } from '@/lib/cloudinary/url.js'
+import { photoBigUrl } from 'lib/cloudinary/url.js'
 
 export default function BigPhoto({ photo: _photo }) {
   const elRef = useRef(null)

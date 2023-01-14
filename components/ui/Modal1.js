@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import cx from 'classnames'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import SpinnerWiggle from './SpinnerWiggle'
-import Button from '@/ui/Button'
+import Button from 'components/ui/Button'
 
 export default function Modal({ isOpen, setIsOpen, photo }) {
   const [loading, setLoading] = useState()

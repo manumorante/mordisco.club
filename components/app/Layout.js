@@ -1,4 +1,4 @@
-import Header from '@/ui/Header'
+import Header from 'components/ui/Header'
 
 function Layout({ children }) {
   return (
