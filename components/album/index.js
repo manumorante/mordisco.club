@@ -1,0 +1,5 @@
+export { default as Album } from './Album'
+export { default as Albums } from './Albums'
+export { default as BigPhoto } from './BigPhoto'
+export { default as Photo } from './Photo'
+export { default as Title } from './Title'

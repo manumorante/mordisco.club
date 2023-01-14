@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function AlbumTitle({ album }) {
+export default function Title({ album }) {
   return (
     <Link href={`/album/${album.folder}`} className='inline-block py-10'>
       {album.title && (

@@ -1,6 +1,2 @@
-export { default as Error } from './Error'
 export { default as Gtag } from './Gtag'
 export { default as Meta } from './Meta'
-export { default as Layout } from './Layout'
-export { default as Modal } from './Modal'
-export { default as SpinnerWiggle } from './SpinnerWiggle'

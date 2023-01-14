@@ -19,6 +19,7 @@ function Header() {
   return (
     <>
       <div
+        role='heading'
         className={cx(
           'Header',
           'fixed z-40 top-0 right-0 left-0',

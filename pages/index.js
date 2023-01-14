@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { ALBUMS } from 'data'
 import { getImagesFromFolder } from 'lib/cloudinary/directory.js'
-import { Layout } from 'components/app'
-import { Albums, Grid, Modal, BigPhoto, AlbumTitle, ZeroCase } from 'components/ui'
+import { Albums, BigPhoto, Title } from 'components/album'
+import { Layout, Grid, Modal, ZeroCase } from 'components/ui'
 
 // getStaticProps
 export async function getStaticProps() {
@@ -43,7 +43,7 @@ export default function HomePage({ albums }) {
 
       {albums.map((album, i) => (
         <section key={i}>
-          <AlbumTitle album={album} />
+          <Title album={album} />
           {album?.images?.length > 0 ? (
             <Grid items={album.images} openModal={openModal} />
           ) : (

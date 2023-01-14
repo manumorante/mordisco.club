@@ -1,5 +1,5 @@
 import cx from 'classnames'
-import { Album } from 'components/ui'
+import { Album } from 'components/album'
 
 export default function Albums({ albums, activeID, className }) {
   return (
