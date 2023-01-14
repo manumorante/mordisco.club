@@ -5,8 +5,6 @@ import { getGridItem } from '@/lib/grid.js'
 import { incrementKey } from '@/lib/useCount.js'
 import Quote from './Quote'
 
-
-
 export default function Grid({ items, gap = 20, openModal }) {
   const gridRef = useRef(null)
   const [grid, setGrid] = useState({
@@ -71,7 +69,7 @@ export default function Grid({ items, gap = 20, openModal }) {
                     'md:hover:opacity-80 transition-opacity duration-300 ease-in-out'
                   )}
                   alt={`Image ${index}`}
-                  loading={index > 6 && 'lazy'}
+                  loading={index > 6 ? 'lazy' : 'eager'}
                 />
               </div>
             )
