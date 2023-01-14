@@ -2,7 +2,10 @@ import React, { useRef, useState, useEffect } from 'react'
 import { photoUrl } from '@/lib/cloudinary/url.js'
 import cx from 'classnames'
 import { getGridItem } from '@/lib/grid.js'
+import { incrementKey } from '@/lib/useCount.js'
 import Quote from './Quote'
+
+
 
 export default function Grid({ items, gap = 20, openModal }) {
   const gridRef = useRef(null)
@@ -23,7 +26,6 @@ export default function Grid({ items, gap = 20, openModal }) {
   }, [])
 
   let IMAGES_USED = 0
-  let QUOTES_USED = 0
 
   return (
     <div
@@ -76,7 +78,9 @@ export default function Grid({ items, gap = 20, openModal }) {
           }
 
           if (gridItem.isQuote) {
-            return <Quote index={QUOTES_USED++} style={gridItem.style} key={index} />
+            return (
+              <Quote index={incrementKey('NEW_QUOTES_USED')} style={gridItem.style} key={index} />
+            )
           }
         })}
       {/*  */}
