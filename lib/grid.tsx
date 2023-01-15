@@ -46,23 +46,23 @@ export const TEMPLATE = {
   desktop: DESKTOP,
 }
 
-function getNearWidth(value) {
+function getNearWidth(value: number) {
   const values = [80, 98, 105, 147, 155, 180, 187, 216, 229, 280, 314, 335, 398, 478, 482, 565, 649]
   const minor = values.find((el) => el >= value)
   return minor || values.at(-1)
 }
 
-function getNearHeight(value) {
+function getNearHeight(value: number) {
   const values = [80, 98, 105, 133, 147, 160, 172, 180, 216, 233, 235, 279, 314, 321, 364, 484, 491]
   return values.find((el) => el >= value)
 }
 
-export function getGridItem({ index, gridWidth, cols = 12, gap, isMobile }) {
+export function getGridItem({ index, gridWidth, cols = 12, gap, isMobile }: getGridItemProps) {
   const usablelWidth = gridWidth - gap * (cols - 1)
   const one = usablelWidth / cols + gap
 
   const TEMPLATE = isMobile ? MOBILE : DESKTOP
-  const item = TEMPLATE[index % TEMPLATE.length]
+  const item: any[] = TEMPLATE[index % TEMPLATE.length]
 
   const isImage = item[0] === 'i'
   const isQuote = item[0] === 'q'
@@ -87,4 +87,12 @@ export function getGridItem({ index, gridWidth, cols = 12, gap, isMobile }) {
     nearWidth,
     nearHeight,
   }
+}
+
+interface getGridItemProps {
+  index: number
+  gridWidth: number
+  cols?: number
+  gap: number
+  isMobile: boolean
 }

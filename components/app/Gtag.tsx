@@ -1,8 +1,9 @@
 import React from 'react'
 import Script from 'next/script'
 
-export default function Gtag({ id }) {
+export default function Gtag({ id }: { id: string }) {
   if (!id) return null
+
   return (
     <>
       {/* Google tag (gtag.js) - Google Analytics */}

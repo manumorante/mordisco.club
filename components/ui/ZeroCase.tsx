@@ -1,4 +1,4 @@
-export default function ZeroCase() {
+function ZeroCase() {
   return (
     <div className='font-thin'>
       <p className='font-light'>Esto está muy vacio.</p>
@@ -6,3 +6,5 @@ export default function ZeroCase() {
     </div>
   )
 }
+
+export default ZeroCase

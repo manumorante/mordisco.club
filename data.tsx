@@ -13,6 +13,7 @@ export const ALBUMS = [
     month: 'Noviembre',
     length: 0,
     cover: 'https://res.cloudinary.com/nvzf/image/upload/v1669413702/mordisco/2022NOV/2905.jpg',
+    images: [],
   },
   {
     folder: '2022MAY',
@@ -21,6 +22,7 @@ export const ALBUMS = [
     month: 'Mayo',
     length: 0,
     cover: 'https://res.cloudinary.com/nvzf/image/upload/v1667052285/mordisco/2022MAY/2222.jpg',
+    images: [],
   },
   {
     folder: '2022MAR',
@@ -29,6 +31,7 @@ export const ALBUMS = [
     month: 'Marzo',
     length: 0,
     cover: 'https://res.cloudinary.com/nvzf/image/upload/v1667096402/mordisco/2022MAR/1675.jpg',
+    images: [],
   },
   {
     folder: '2020FEB',
@@ -38,6 +41,7 @@ export const ALBUMS = [
     length: 0,
     cover:
       'https://res.cloudinary.com/nvzf/image/upload/v1668211358/mordisco/2020FEB/3036656966366357.jpg',
+    images: [],
   },
   {
     folder: '2019NOV',
@@ -47,6 +51,7 @@ export const ALBUMS = [
     length: 0,
     cover:
       'https://res.cloudinary.com/nvzf/image/upload/v1668212375/mordisco/2019NOV/2832408496791206.jpg',
+    images: [],
   },
 ]
 

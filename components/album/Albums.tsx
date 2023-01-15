@@ -1,7 +1,14 @@
+import { AlbumType } from '@/types'
 import cx from 'classnames'
 import { Album } from 'components/album'
 
-export default function Albums({ albums, activeID, className }) {
+type Props = {
+  albums: AlbumType[]
+  activeID: string
+  className: string
+}
+
+function Albums({ albums, activeID, className }: Props) {
   return (
     <div
       className={cx(
@@ -20,3 +27,5 @@ export default function Albums({ albums, activeID, className }) {
     </div>
   )
 }
+
+export default Albums

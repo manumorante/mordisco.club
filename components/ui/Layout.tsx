@@ -1,6 +1,10 @@
 import { Header } from 'components/ui'
 
-function Layout({ children }) {
+interface Props {
+  children: any
+}
+
+function Layout({ children }: Props) {
   return (
     <>
       <Header />

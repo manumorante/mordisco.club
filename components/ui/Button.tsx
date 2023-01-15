@@ -1,7 +1,16 @@
 import React from 'react'
 import cx from 'classnames'
 
-export default function Button({ onClick, className, submit, secondary, icon, label }) {
+type Types = {
+  onClick: any
+  className: string
+  submit: boolean
+  secondary?: boolean
+  icon?: any
+  label: string
+}
+
+function Button({ onClick, className, submit, secondary, icon, label }: Types) {
   const Icon = icon && React.cloneElement(icon, { className: 'w-8 h-8 sm:w-5 sm:h-5 opacity-90' })
   return (
     <button
@@ -35,3 +44,5 @@ export default function Button({ onClick, className, submit, secondary, icon, la
     </button>
   )
 }
+
+export default Button

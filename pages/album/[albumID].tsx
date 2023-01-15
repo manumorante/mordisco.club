@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+
 import { ALBUMS } from 'data'
-import { getImagesFromFolder } from 'lib/cloudinary/directory.js'
-import { Layout, Modal } from 'components/app'
-import { BigPhoto, Albums, Grid, AlbumTitle, ZeroCase } from 'components/ui'
+import { getImagesFromFolder } from 'lib/cloudinary/directory'
+import { Layout, Modal, Grid, ZeroCase } from 'components/ui'
+import { BigPhoto, Albums, Title } from 'components/album'
 
 // getStaticPaths
 export async function getStaticPaths() {
@@ -14,20 +15,26 @@ export async function getStaticPaths() {
 }
 
 // getStaticProps
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: { albumID: string } }) {
   const { albumID } = params
   const album = ALBUMS.find((album) => album.folder === albumID)
   const images = await getImagesFromFolder(albumID)
   return { props: { albumID, album, images } }
 }
 
-export default function Album({ albumID, album, images }) {
-  const [showModal, setModal] = useState()
-  const [modalImage, setModalImage] = useState()
+interface Props {
+  albumID: string
+  album: any // TODO: album type?
+  images: any[]
+}
+
+function Album({ albumID, album, images }: Props) {
+  const [showModal, setModal] = useState<boolean>(false)
+  const [modalImage, setModalImage] = useState<any>()
 
   if (!images) return null
 
-  function openModal(photo) {
+  function openModal(photo: string) {
     setModalImage(photo)
     setModal(true)
   }
@@ -45,8 +52,10 @@ export default function Album({ albumID, album, images }) {
 
       <Albums className='mb-8' albums={ALBUMS} activeID={albumID} />
 
-      <AlbumTitle album={album} />
+      <Title album={album} />
       {images.length > 0 ? <Grid items={images} openModal={openModal} /> : <ZeroCase />}
     </Layout>
   )
 }
+
+export default Album

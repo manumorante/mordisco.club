@@ -2,7 +2,13 @@ import { useEffect, useState } from 'react'
 import cx from 'classnames'
 import { useRouter } from 'next/router'
 
-export default function Modal({ children, visible, close }) {
+interface Props {
+  children: any
+  visible: boolean
+  close: any // callback function to close the modal
+}
+
+function Modal({ children, visible, close }: Props) {
   const [showModal, setShowModal] = useState(visible)
   const router = useRouter()
   const hasHash = router.asPath.includes('#modal')
@@ -58,3 +64,5 @@ export default function Modal({ children, visible, close }) {
     </div>
   )
 }
+
+export default Modal

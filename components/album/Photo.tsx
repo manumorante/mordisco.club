@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { SpinnerWiggle } from 'components/ui'
 import cx from 'classnames'
+import { ImageType } from '@/types'
 
-function Photo({ photo, isBig, className }) {
+type Types = {
+  photo: ImageType
+  isBig: boolean
+  className: string
+}
+
+function Photo({ photo, isBig, className }: Types) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {

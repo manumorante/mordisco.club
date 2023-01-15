@@ -1,29 +1,32 @@
 import { useState } from 'react'
 import { ALBUMS } from 'data'
-import { getImagesFromFolder } from 'lib/cloudinary/directory.js'
+import { getImagesFromFolder } from 'lib/cloudinary/directory'
 import { Albums, BigPhoto, Title } from 'components/album'
 import { Layout, Grid, Modal, ZeroCase } from 'components/ui'
+import { AlbumType } from '@/types'
 
 // getStaticProps
 export async function getStaticProps() {
-  const albums = [...ALBUMS]
+  const albums: AlbumType[] = [...ALBUMS]
   await Promise.all(
     albums.map(async (album) => {
       const images = await getImagesFromFolder(album.folder)
 
-      album.images = images
-      album.length = images.length
+      if (images && images?.length > 0) {
+        album.images = images
+        album.length = images.length
+      }
     })
   )
 
   return { props: { albums } }
 }
 
-export default function HomePage({ albums }) {
-  const [showModal, setModal] = useState()
-  const [modalImage, setModalImage] = useState()
+function HomePage({ albums }: { albums: any[] }) {
+  const [showModal, setModal] = useState<any>()
+  const [modalImage, setModalImage] = useState<any>()
 
-  function openModal(photo) {
+  function openModal(photo: any) {
     setModalImage(photo)
     setModal(true)
   }
@@ -54,3 +57,5 @@ export default function HomePage({ albums }) {
     </Layout>
   )
 }
+
+export default HomePage

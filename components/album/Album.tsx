@@ -1,9 +1,16 @@
 import cx from 'classnames'
 import { routes } from 'data'
-import { photoUrl } from 'lib/cloudinary/url.js'
+import { photoUrl } from 'lib/cloudinary/url'
 import Link from 'next/link'
+import { AlbumType } from '@/types'
 
-export default function Album({ album, active, className }) {
+type Types = {
+  album: AlbumType
+  active: boolean
+  className: string
+}
+
+function Album({ album, active, className }: Types) {
   if (!album) return null
 
   const width = 230
@@ -55,3 +62,5 @@ export default function Album({ album, active, className }) {
     </Link>
   )
 }
+
+export default Album

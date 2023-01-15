@@ -1,4 +1,8 @@
-function Logo({ className }) {
+interface Props {
+  className: string
+}
+
+function Logo({ className }: Props) {
   return (
     <svg
       className={className}

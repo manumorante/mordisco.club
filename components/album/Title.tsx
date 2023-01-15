@@ -1,6 +1,7 @@
 import Link from 'next/link'
+import { AlbumType } from '@/types'
 
-export default function Title({ album }) {
+function Title({ album }: { album: AlbumType }) {
   return (
     <Link href={`/album/${album.folder}`} className='inline-block py-10'>
       {album.title && (
@@ -16,3 +17,5 @@ export default function Title({ album }) {
     </Link>
   )
 }
+
+export default Title

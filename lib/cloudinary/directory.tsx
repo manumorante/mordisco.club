@@ -1,21 +1,10 @@
-import { client } from 'lib/cloudinary/client.js'
+import { client } from 'lib/cloudinary/client'
 import { routes } from 'data'
+import { ImageApiType, ImageType } from '@/types'
 
-function photosMapper(photos) {
-  // Randomize photos array
+function photosMapper(photos: ImageApiType[]): ImageType[] {
   const randomizedPhotos = photos.sort(() => Math.random() - 0.5)
-  /**
-   * Example mapping:
-    {
-      public_id: 'mordisco/2022MAY/2327',
-      albumID: '2022MAY',
-      photoID: '2327',
-      url: 'https://res.cloudinary.com/nvzf/image/upload/v1667052283/mordisco/2022MAY/2327.jpg',
-      width: 4000,
-      height: 2612,
-      megas: 0.994327
-    },
-  */
+
   return randomizedPhotos.map((image) => {
     const PID = image.public_id
     return {
@@ -26,12 +15,12 @@ function photosMapper(photos) {
       width: image.width,
       height: image.height,
       megas: image.bytes / 1000000,
-    }
+    } as ImageType
   })
 }
 
 // ⏫ Get images from folder
-export async function getImagesFromFolder(folder) {
+export async function getImagesFromFolder(folder: string) {
   try {
     const images = await client.api.resources({
       resource_type: 'image',
@@ -45,6 +34,7 @@ export async function getImagesFromFolder(folder) {
   } catch (err) {
     console.warn('> 🟥 Get images from folder error')
     if (err) console.warn(err)
+    return []
   }
 }
 
