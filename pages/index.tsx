@@ -1,7 +1,7 @@
-import { useState } from 'react'
 import { getAlbums } from 'lib/cloudinary/getAlbums'
-import { AlbumCardList, BigPhoto, AlbumSection } from '@/components/albums'
+import { AlbumCardList, BigPhoto, AlbumSection } from 'components/albums'
 import { Layout, Modal } from 'components/ui'
+import { useModal } from 'lib'
 
 export async function getStaticProps() {
   const albums = await getAlbums()
@@ -9,29 +9,24 @@ export async function getStaticProps() {
 }
 
 function HomePage({ albums }: { albums: any[] }) {
-  const [showModal, setModal] = useState<any>()
-  const [modalImage, setModalImage] = useState<any>()
+  const modal = useModal()
 
-  function openModal(photo: any) {
-    setModalImage(photo)
-    setModal(true)
+  function openPhoto(photo: any) {
+    modal.open(<BigPhoto photo={photo} />)
   }
 
-  function closeModal() {
-    setModal(false)
-    setModalImage(null)
+  function closePhoto() {
+    modal.close()
   }
 
   return (
     <Layout>
-      <Modal visible={showModal} close={closeModal}>
-        <BigPhoto photo={modalImage} />
-      </Modal>
+      <Modal visible={modal.visible} close={closePhoto} content={modal.content} />
 
       <AlbumCardList className='mb-8' albums={albums} activeID={albums[0]?.folder} />
 
       {albums.map((album, i) => (
-        <AlbumSection key={i} album={album} openModal={openModal} />
+        <AlbumSection key={i} album={album} openPhoto={openPhoto} />
       ))}
     </Layout>
   )

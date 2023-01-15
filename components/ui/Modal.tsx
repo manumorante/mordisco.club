@@ -3,12 +3,13 @@ import cx from 'classnames'
 import { useRouter } from 'next/router'
 
 interface Props {
-  children: any
-  visible: boolean
-  close: any // callback function to close the modal
+  children?: any
+  content?: any
+  visible?: boolean
+  close?: Function
 }
 
-function Modal({ children, visible, close }: Props) {
+function Modal({ children, visible = false, close = () => {}, content }: Props) {
   const [showModal, setShowModal] = useState(visible)
   const router = useRouter()
   const hasHash = router.asPath.includes('#modal')
@@ -60,7 +61,7 @@ function Modal({ children, visible, close }: Props) {
         onClick={handleClose}>
         Cerrar
       </div>
-      {children}
+      {content || children}
     </div>
   )
 }

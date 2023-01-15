@@ -1,17 +1,17 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { photoUrl } from 'lib/cloudinary/url'
 import cx from 'classnames'
-import { useCounter, getGridItem } from 'lib'
+import { getGridItem } from 'lib'
 import { Quote } from 'components/ui'
 import { GridType } from '@/types'
 
 type Props = {
   items: any[]
   gap?: number
-  openModal: any // Callback function to open modal
+  openPhoto: Function // Callback function to open modal
 }
 
-function Grid({ items, gap = 20, openModal }: Props) {
+function Grid({ items, gap = 20, openPhoto }: Props) {
   const gridRef = useRef<any>(null)
   const [grid, setGrid] = useState<GridType>({
     width: 0,
@@ -66,7 +66,7 @@ function Grid({ items, gap = 20, openModal }: Props) {
             return (
               <div className='bg-neutral-900/70' style={gridItem.style} key={index}>
                 <img
-                  onClick={() => openModal(photo)}
+                  onClick={() => openPhoto(photo)}
                   src={photoSrc}
                   width={gridItem.width}
                   height={gridItem.height}
