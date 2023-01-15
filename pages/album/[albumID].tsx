@@ -51,7 +51,7 @@ function Album({ albumID, album, images }: Props) {
       </Modal>
 
       <AlbumCardList className='mb-8' albums={ALBUMS} activeID={albumID} />
-      <AlbumSection album={album} openModal={openModal} />
+      <AlbumSection album={album} openPhoto={openModal} />
     </Layout>
   )
 }
