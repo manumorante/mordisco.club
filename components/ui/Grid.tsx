@@ -1,8 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { photoUrl } from 'lib/cloudinary/url'
 import cx from 'classnames'
-import { getGridItem } from 'lib/grid'
-import { incrementKey } from 'lib/useCount'
+import { useCounter, getGridItem } from 'lib'
 import { Quote } from 'components/ui'
 import { GridType } from '@/types'
 
@@ -83,9 +82,7 @@ function Grid({ items, gap = 20, openModal }: Props) {
           }
 
           if (gridItem.isQuote) {
-            return (
-              <Quote index={incrementKey('NEW_QUOTES_USED')} style={gridItem.style} key={index} />
-            )
+            return <Quote style={gridItem.style} key={index} />
           }
         })}
       {/*  */}

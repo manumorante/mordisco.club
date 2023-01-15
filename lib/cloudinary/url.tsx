@@ -17,6 +17,12 @@ export function photoUrl({ url, width, height, dpr = 1 }: PhotoUrlProps) {
 /**
  * photoBigURL
  */
+interface photoBigURLProps {
+  url: string
+  width: number
+  dpr: number
+}
+
 export function photoBigURL({ url, width, dpr = 1 }: photoBigURLProps) {
   const w_ = `w_${width}`
   const dpr_ = `dpr_${dpr}`
@@ -29,11 +35,5 @@ interface PhotoUrlProps {
   url: string
   width: number
   height: number
-  dpr: number
-}
-
-interface photoBigURLProps {
-  url: string
-  width: number
   dpr: number
 }

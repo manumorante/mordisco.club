@@ -1,17 +1,15 @@
 import { quotes } from 'data'
+import { useCounter, largestWord } from '@/lib'
 import cx from 'classnames'
 
 interface Props {
-  index: number
   style: any // TODO: style type?
 }
 
-function Quote({ index, style }: Props) {
-  const quote = quotes[index % quotes.length]
-  const text = quote.text
-  const array = text.split(' ')
-  const sorted = array.sort((a, b) => b.length - a.length)
-  const length = sorted[0].length
+function Quote({ style }: Props) {
+  const counter = useCounter('QUOTES_USED')
+  const quote = quotes[counter % quotes.length]
+  const length = largestWord(quote.text).length
 
   return (
     <div
@@ -23,7 +21,7 @@ function Quote({ index, style }: Props) {
             'text-4xl sm:text-5xl': length <= 10,
             'text-3xl sm:text-4xl': length > 10,
           })}>
-          {text}
+          {quote.text}
         </p>
         <p className='text-xl text-neutral-400'>{quote.author}</p>
       </div>

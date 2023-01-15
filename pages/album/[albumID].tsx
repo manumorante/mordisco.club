@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 
 import { ALBUMS } from 'data'
 import { getImagesFromFolder } from 'lib/cloudinary/directory'
-import { Layout, Modal, Grid, ZeroCase } from 'components/ui'
-import { BigPhoto, Albums, Title } from 'components/album'
+import { Layout, Modal } from 'components/ui'
+import { BigPhoto, AlbumCardList, AlbumSection } from 'components/albums'
 
 // getStaticPaths
 export async function getStaticPaths() {
@@ -50,10 +50,8 @@ function Album({ albumID, album, images }: Props) {
         <BigPhoto photo={modalImage} />
       </Modal>
 
-      <Albums className='mb-8' albums={ALBUMS} activeID={albumID} />
-
-      <Title album={album} />
-      {images.length > 0 ? <Grid items={images} openModal={openModal} /> : <ZeroCase />}
+      <AlbumCardList className='mb-8' albums={ALBUMS} activeID={albumID} />
+      <AlbumSection album={album} openModal={openModal} />
     </Layout>
   )
 }

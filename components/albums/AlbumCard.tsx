@@ -4,13 +4,13 @@ import { photoUrl } from 'lib/cloudinary/url'
 import Link from 'next/link'
 import { AlbumType } from '@/types'
 
-type Types = {
+type Props = {
   album: AlbumType
   active: boolean
   className: string
 }
 
-function Album({ album, active, className }: Types) {
+function AlbumCard({ album, active, className }: Props) {
   if (!album) return null
 
   const width = 230
@@ -63,4 +63,4 @@ function Album({ album, active, className }: Types) {
   )
 }
 
-export default Album
+export default AlbumCard

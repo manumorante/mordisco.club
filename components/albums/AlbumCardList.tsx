@@ -1,6 +1,6 @@
 import { AlbumType } from '@/types'
 import cx from 'classnames'
-import { Album } from 'components/album'
+import Item from './AlbumCard'
 
 type Props = {
   albums: AlbumType[]
@@ -8,7 +8,7 @@ type Props = {
   className: string
 }
 
-function Albums({ albums, activeID, className }: Props) {
+function AlbumCardList({ albums, activeID, className }: Props) {
   return (
     <div
       className={cx(
@@ -17,7 +17,7 @@ function Albums({ albums, activeID, className }: Props) {
         className
       )}>
       {albums.map((album, i) => (
-        <Album
+        <Item
           className='snap-proximity shrink-0 w-[45%] xs:w-2/5 max-w-[230px]'
           album={album}
           active={album.folder === activeID}
@@ -28,4 +28,4 @@ function Albums({ albums, activeID, className }: Props) {
   )
 }
 
-export default Albums
+export default AlbumCardList
