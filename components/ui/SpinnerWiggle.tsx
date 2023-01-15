@@ -6,7 +6,7 @@ import cx from 'classnames'
  */
 
 interface Props {
-  showif: boolean
+  showif?: boolean
   fullScreen: boolean
 }
 

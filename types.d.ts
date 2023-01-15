@@ -17,6 +17,7 @@ export interface AlbumType {
 
 // Photo value object
 export interface ImageType {
+  id: any
   public_id: any
   photoID: string
   albumID: string
@@ -24,6 +25,8 @@ export interface ImageType {
   height: number
   megas: number
   url: string
+  big: string
+  small: string
 }
 
 /**

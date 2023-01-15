@@ -3,13 +3,13 @@ import { SpinnerWiggle } from 'components/ui'
 import cx from 'classnames'
 import { ImageType } from '@/types'
 
-type Types = {
+type Props = {
   photo: ImageType
   isBig: boolean
   className: string
 }
 
-function Photo({ photo, isBig, className }: Types) {
+function Photo({ photo, isBig, className }: Props) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
