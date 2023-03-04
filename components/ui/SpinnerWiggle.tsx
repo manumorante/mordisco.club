@@ -1,5 +1,5 @@
 import React from 'react'
-import cx from 'classnames'
+import cx from 'clsx'
 
 /**
  * If you pass it nothing, it shows itself with the idea that you control it from the outside.

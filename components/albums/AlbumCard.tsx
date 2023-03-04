@@ -1,4 +1,4 @@
-import cx from 'classnames'
+import cx from 'clsx'
 import { routes } from 'data'
 import { photoUrl } from 'lib/cloudinary/url'
 import Link from 'next/link'

@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { photoUrl } from 'lib/cloudinary/url'
-import cx from 'classnames'
+import cx from 'clsx'
 import { getGridItem } from 'lib'
 import { Quote } from 'components/ui'
 import { GridType } from '@/types'
@@ -31,11 +31,12 @@ function Grid({ items, gap = 20, openPhoto }: Props) {
 
   let IMAGES_USED = 0
 
+  const mainCx = cx(
+    'Grid bg-black/90 py-5 grid grid-cols-12 auto-rows-min opacity-0 animate-[fade-in_0.3s_ease-in_forwards]'
+  )
+
   return (
-    <div
-      ref={gridRef}
-      className='Grid bg-black/90 py-5 grid grid-cols-12 auto-rows-min opacity-0 animate-[fade-in_0.3s_ease-in_forwards]'
-      style={{ gap: gap }}>
+    <div ref={gridRef} className={mainCx} style={{ gap: gap }}>
       {grid.ready &&
         Array.from({ length: 100 }).map((_, index) => {
           if (IMAGES_USED >= items.length) return null

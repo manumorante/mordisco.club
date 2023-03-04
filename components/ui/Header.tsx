@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-import cx from 'classnames'
+import cx from 'clsx'
 import { Logo } from 'components/ui'
 
 function Header({ isTop }: { isTop: boolean }) {

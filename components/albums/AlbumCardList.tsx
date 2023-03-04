@@ -1,5 +1,5 @@
 import { AlbumType } from '@/types'
-import cx from 'classnames'
+import cx from 'clsx'
 import Container from '../ui/Container'
 import AlbumCard from './AlbumCard'
 

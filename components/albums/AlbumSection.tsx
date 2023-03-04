@@ -1,5 +1,5 @@
 import { Title } from '@/components/albums'
-import { Grid, ZeroCase } from 'components/ui'
+import { Grid } from 'components/ui'
 
 interface Props {
   album: {
@@ -13,7 +13,7 @@ interface Props {
 }
 
 function AlbumSection({ album, openPhoto }: Props) {
-  if (album?.images?.length <= 0) return <ZeroCase />
+  if (album?.images?.length <= 0) return
 
   return (
     <section id={`album${album.folder}`}>

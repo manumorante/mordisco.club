@@ -1,6 +1,6 @@
 import { quotes } from 'data'
 import { useCounter, largestWord } from '@/lib'
-import cx from 'classnames'
+import cx from 'clsx'
 
 interface Props {
   style: any // TODO: style type?
@@ -13,7 +13,24 @@ function Quote({ style }: Props) {
 
   return (
     <div
-      className='Quote bg-gradient-to-br from-neutral-900 px-11 py-28 sm:px-10 sm:py-14 lg:px-14 lg:py-20 rounded-md flex items-center'
+      className={cx(
+        'Quote',
+        // 'bg-gradient-to-br',
+        // 'from-neutral-900',
+        'bg-[url("/bg-2867.jpg")]',
+        'bg-fixed',
+        'bg-cover',
+        'bg-right-top',
+        'px-11',
+        'py-28',
+        'sm:px-10',
+        'sm:py-14',
+        'lg:px-14',
+        'lg:py-20',
+        'rounded-md',
+        'flex',
+        'items-center'
+      )}
       style={style}>
       <div>
         <p

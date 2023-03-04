@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { SpinnerWiggle } from 'components/ui'
-import cx from 'classnames'
+import cx from 'clsx'
 import { ImageType } from '@/types'
 
 type Props = {

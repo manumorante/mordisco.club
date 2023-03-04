@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import cx from 'classnames'
+import cx from 'clsx'
 import { useRouter } from 'next/router'
 
 interface Props {
