@@ -13,7 +13,7 @@ interface Props {
 }
 
 function AlbumSection({ album, openPhoto }: Props) {
-  if (album?.images?.length <= 0) return
+  if (album?.images?.length <= 0) return null
 
   return (
     <section id={`album${album.folder}`}>
