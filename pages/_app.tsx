@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>{meta.title}</title>
 
-        <style>{`html, body, #__next { background-color: #000000; color: #ffffff; height: 100%; scroll-behavior: smooth; }`}</style>
+        <style>{`html { background-color: #0a0a0a; }`}</style>
 
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta name='description' content={meta.description} />

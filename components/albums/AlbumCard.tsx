@@ -27,17 +27,22 @@ function AlbumCard({ album, active, className }: Props) {
       }}
       className={cx(
         'Album',
-        'relative w-ful h-auto rounded-md flex flex-col gap-2',
+        'relative h-auto rounded-md flex flex-col gap-2',
+        'overflow-hidden',
         'transition-all duration-500 ease-in-out',
         {
-          'opacity-50 scale-90': !active,
+          'scale-90': !active,
         },
+
+        'w-[140px]',
+        'md:w-[160px]',
+        'xl:w-[200px]',
         className
       )}>
       <div className='w-full max-w-xs aspect-square relative'>
         {coverSrc && (
           <img
-            className='w-full h-full object-cover rounded-md'
+            className='w-full h-full object-cover'
             src={coverSrc}
             width={width}
             height={height}
@@ -45,17 +50,24 @@ function AlbumCard({ album, active, className }: Props) {
           />
         )}
 
-        <span
+        <div
           className={cx(
-            'absolute right-0 bottom-0 left-0',
+            // Position
+            'absolute',
+            'right-0',
+            'bottom-0',
+            'left-0',
+
             'p-3',
+
             'text-base leading-[14px]',
             'xs:text-lg xs:leading-4',
             'sm:text-3xl sm:leading-7',
-            'bg-gradient-to-t from-black/80'
+
+            'bg-gradient-to-t via-black-800 from-black-900'
           )}>
           {album.title}
-        </span>
+        </div>
       </div>
 
       {/* <div className='text-sm sm:text-base font-light leading-tight uppercase'>

@@ -1,35 +1,22 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-import React, { useState, useEffect } from 'react'
 import cx from 'classnames'
-import { BeakerIcon } from '@heroicons/react/24/outline'
 import { Logo } from 'components/ui'
 
-function Header() {
-  const [isSmall, seIsSmall] = useState(false)
-  const jumpToSmallHeader = 100
-
-  useEffect(() => {
-    const handleScroll = () => {
-      seIsSmall(window.scrollY > jumpToSmallHeader)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+function Header({ isTop }: { isTop: boolean }) {
+  const mainCx = cx(
+    'Header',
+    'fixed z-40 top-0 right-0 left-0',
+    {
+      'h-header-md': isTop,
+      'h-header-sm': !isTop,
+      'bg-black-900/90 backdrop-saturate-150 backdrop-blur-xl': true,
+    },
+    'transition-all duration-500 ease-in-out'
+  )
 
   return (
     <>
-      <div
-        role='heading'
-        className={cx(
-          'Header',
-          'fixed z-40 top-0 right-0 left-0',
-          {
-            'h-header-md': !isSmall,
-            'h-header-sm': isSmall,
-            'backdrop-saturate-150 backdrop-blur-xl': isSmall,
-          },
-          'transition-all duration-500 ease-in-out'
-        )}>
+      <div role='heading' className={mainCx}>
         <div className={cx('mx-auto max-w-6xl h-full px-6', 'flex justify-between items-center')}>
           <a href='/#header' aria-label='Ir al inicio'>
             <Logo
@@ -37,17 +24,7 @@ function Header() {
                 'h-auto transition-all duration-500 ease-in-out',
                 // W
                 'w-36',
-                { 'sm:w-44': !isSmall }
-              )}
-            />
-          </a>
-
-          <a href='/hello' aria-label='Información del sitio y el autor'>
-            <BeakerIcon
-              className={cx(
-                'text-white/90 hover:text-white',
-                'transition-colors duration-300 ease-in-out',
-                'w-5 h-5'
+                { 'sm:w-44': isTop }
               )}
             />
           </a>
