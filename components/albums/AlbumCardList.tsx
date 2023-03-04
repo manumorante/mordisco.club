@@ -5,15 +5,21 @@ import AlbumCard from './AlbumCard'
 type Props = {
   albums: AlbumType[]
   activeID: string
-  className: string
+  className?: string
 }
 
 function AlbumCardList({ albums, activeID, className }: Props) {
   return (
     <div
       className={cx(
-        'Albums xl:w-full flex gap-2 snap-x overflow-x-auto',
-        '-mx-5 px-5 xl:mx-0 xl:p-0',
+        'Albums',
+        'w-full',
+        'flex',
+        'gap-2',
+        'snap-x',
+        'overflow-x-auto',
+        'px-4 py-6',
+        'bg-stone-900',
         className
       )}>
       {albums.map((album, i) => (

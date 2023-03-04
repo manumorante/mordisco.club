@@ -3,6 +3,7 @@ import { AlbumCardList, BigPhoto, AlbumSection } from 'components/albums'
 import { Layout, Modal } from 'components/ui'
 import { useModal } from 'lib'
 import { useRouter } from 'next/router'
+import Container from '@/components/ui/Container'
 
 export async function getStaticProps() {
   const albums = await getAlbums()
@@ -29,9 +30,13 @@ function HomePage({ albums }: { albums: any[] }) {
     <Layout>
       <Modal visible={modal.visible} close={closePhoto} content={modal.content} />
 
-      <AlbumCardList className='mb-8' albums={albums} activeID={album.folder} />
+      <AlbumCardList albums={albums} activeID={album.folder} />
 
-      {album && <AlbumSection album={album} openPhoto={openPhoto} />}
+      {album && (
+        <Container>
+          <AlbumSection album={album} openPhoto={openPhoto} />
+        </Container>
+      )}
     </Layout>
   )
 }
