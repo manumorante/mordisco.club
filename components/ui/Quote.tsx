@@ -15,12 +15,12 @@ function Quote({ style }: Props) {
     <div
       className={cx(
         'Quote',
-        // 'bg-gradient-to-br',
-        // 'from-neutral-900',
-        'bg-[url("/bg-2867.jpg")]',
-        'bg-fixed',
-        'bg-cover',
-        'bg-right-top',
+        'bg-gradient-to-br',
+        'from-neutral-900',
+        // 'bg-[url("/bg-2867.jpg")]',
+        // 'bg-fixed',
+        // 'bg-cover',
+        // 'bg-right-top',
         'px-11',
         'py-28',
         'sm:px-10',
