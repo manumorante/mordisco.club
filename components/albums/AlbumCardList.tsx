@@ -1,6 +1,6 @@
 import { AlbumType } from '@/types'
 import cx from 'classnames'
-import Item from './AlbumCard'
+import AlbumCard from './AlbumCard'
 
 type Props = {
   albums: AlbumType[]
@@ -17,7 +17,7 @@ function AlbumCardList({ albums, activeID, className }: Props) {
         className
       )}>
       {albums.map((album, i) => (
-        <Item
+        <AlbumCard
           className='snap-proximity shrink-0 w-[45%] xs:w-2/5 max-w-[230px]'
           album={album}
           active={album.folder === activeID}

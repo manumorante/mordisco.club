@@ -16,7 +16,7 @@ function AlbumSection({ album, openPhoto }: Props) {
   if (album?.images?.length <= 0) return <ZeroCase />
 
   return (
-    <section id={`album${album.folder}`} title={album.title}>
+    <section id={`album${album.folder}`}>
       <Title title={album.title} folder={album.folder} year={album.year} month={album.month} />
       <Grid items={album.images} openPhoto={openPhoto} />
     </section>

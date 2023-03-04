@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 interface Props {
   title: string
   folder: string
@@ -9,13 +7,17 @@ interface Props {
 
 function Title({ title, folder, month, year }: Props) {
   return (
-    <Link href={`/album/${folder}`} className='inline-block py-10'>
-      <h3 className='font-extralight text-4xl xs:text-5xl sm:text-6xl uppercase'>{title}</h3>
+    <div className='inline-block py-10'>
+      <h2 className='font-extralight text-4xl xs:text-5xl sm:text-6xl uppercase'>{title}</h2>
 
-      <h2 className='font-extralight text-xl xs:text-2xl uppercase'>
-        <span className='opacity-80'>{month}</span> <span className='opacity-60'>{year}</span>
-      </h2>
-    </Link>
+      <div className='flex'>
+        <time
+          dateTime={`${year}-${month}`}
+          className='font-extralight text-xl xs:text-2xl uppercase'>
+          <span className='opacity-80'>{month}</span> <span className='opacity-60'>{year}</span>
+        </time>
+      </div>
+    </div>
   )
 }
 
