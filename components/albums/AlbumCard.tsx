@@ -21,7 +21,10 @@ function AlbumCard({ album, active, className }: Props) {
 
   return (
     <Link
-      href={`/album/${album.folder}`}
+      href={{
+        pathname: '/',
+        query: { albumID: album.folder },
+      }}
       className={cx(
         'Album',
         'relative w-ful h-auto rounded-md flex flex-col gap-2',
