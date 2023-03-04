@@ -34,7 +34,7 @@ function Modal({ children, visible = false, close = () => {}, content }: Props) 
   const handleClose = () => {
     close()
     setShowModal(false)
-    if (showModal) router.back()
+    if (showModal) router.push('/', undefined, { scroll: false })
   }
 
   useEffect(() => {
