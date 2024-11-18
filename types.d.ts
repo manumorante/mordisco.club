@@ -1,3 +1,26 @@
+import { ReactElement } from "react"
+
+export interface GridItem {
+  photoID: string
+  image: {
+    src: string
+    width: number
+    height: number
+  }
+}
+export type GridLayout = Array<GridSection>
+export type GridSection = {
+  area: string
+  times: number
+}
+
+export type AreaList = string[]
+
+export interface GridOptions {
+  layout: GridLayout
+  dpr: number
+}
+
 export interface GridType {
   width: number
   isMobile: boolean
@@ -6,7 +29,7 @@ export interface GridType {
 }
 
 export interface AlbumType {
-  folder: string
+  albumID: string
   title: string
   cover: string
   year: number
