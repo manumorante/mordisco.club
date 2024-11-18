@@ -1,0 +1,22 @@
+/* Grid area styles */
+.Grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-rows: minmax(min-content, max-content);
+  gap: 1.25rem;
+}
+
+.a-12 { --a: 10; --b: 12 }
+.a-88 { --a: 8;  --b: 8 }
+.a-44 { --a: 4;  --b: 4 }
+.a-67 { --a: 6;  --b: 7 }
+.a-68 { --a: 6;  --b: 8 }
+.a-66 { --a: 6;  --b: 6 }
+.a-65 { --a: 6;  --b: 5 }
+.a-34 { --a: 3;  --b: 4 }
+.a-22 { --a: 2;  --b: 2 }
+
+.Area {
+  grid-area: span var(--a) / span var(--b, --a) / span var(--a) / span var(--b, --a);
+  aspect-ratio: var(--b, --a) / var(--a);
+}
