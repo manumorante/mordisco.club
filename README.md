@@ -1,1 +1,4 @@
+[![wakatime](https://wakatime.com/badge/user/c8d2802f-0742-4964-bd79-1cb374b6de43/project/9f705126-6463-49fb-8964-386c634a5109.svg)](https://wakatime.com/badge/user/c8d2802f-0742-4964-bd79-1cb374b6de43/project/9f705126-6463-49fb-8964-386c634a5109)
+
 ![Mordisco Club](/public/og/mordisco.png)
+
