@@ -5,14 +5,34 @@ export const routes = {
   defaultCover: '/default-cover.gif',
 }
 
+const coverTrans = 'https://res.cloudinary.com/nvzf/image/upload/w_200,ar_1:1,c_fill,g_auto'
+
 export const ALBUMS = [
+  {
+    folder: '2024NOV',
+    title: 'Theo Kottis, Isa Ruíz',
+    year: 2024,
+    month: 'Noviembre',
+    length: 0,
+    cover: `${coverTrans}/v1736634638/mordisco/2024NOV/IMG_3730_luwowr.jpg`,
+    images: [],
+  },
+  {
+    folder: '2024SEP',
+    title: 'Baldo, Fernanda Arrau',
+    year: 2024,
+    month: 'Septiembre',
+    length: 0,
+    cover: `${coverTrans}/v1736635741/mordisco/2024SEP/_MG_4253_hlju24.jpg`,
+    images: [],
+  },
   {
     folder: '2022NOV',
     title: 'Fabrizio Mammarella, Yahaira',
     year: 2022,
     month: 'Noviembre',
     length: 0,
-    cover: 'https://res.cloudinary.com/nvzf/image/upload/v1669413702/mordisco/2022NOV/2905.jpg',
+    cover: `${coverTrans}/v1669413702/mordisco/2022NOV/2905.jpg`,
     images: [],
   },
   {
@@ -21,7 +41,7 @@ export const ALBUMS = [
     year: 2022,
     month: 'Mayo',
     length: 0,
-    cover: 'https://res.cloudinary.com/nvzf/image/upload/v1667052285/mordisco/2022MAY/2222.jpg',
+    cover: `${coverTrans}/v1667052285/mordisco/2022MAY/2222.jpg`,
     images: [],
   },
   {
@@ -30,7 +50,7 @@ export const ALBUMS = [
     year: 2022,
     month: 'Marzo',
     length: 0,
-    cover: 'https://res.cloudinary.com/nvzf/image/upload/v1667096402/mordisco/2022MAR/1675.jpg',
+    cover: `${coverTrans}/v1667096402/mordisco/2022MAR/1675.jpg`,
     images: [],
   },
   {
@@ -39,8 +59,7 @@ export const ALBUMS = [
     year: 2020,
     month: 'Febrero',
     length: 0,
-    cover:
-      'https://res.cloudinary.com/nvzf/image/upload/v1668211358/mordisco/2020FEB/3036656966366357.jpg',
+    cover: `${coverTrans}/v1668211358/mordisco/2020FEB/3036656966366357.jpg`,
     images: [],
   },
   {
@@ -49,8 +68,7 @@ export const ALBUMS = [
     year: 2019,
     month: 'Noviembre',
     length: 0,
-    cover:
-      'https://res.cloudinary.com/nvzf/image/upload/v1668212375/mordisco/2019NOV/2832408496791206.jpg',
+    cover: `${coverTrans}/v1668212375/mordisco/2019NOV/2832408496791206.jpg`,
     images: [],
   },
 ]
