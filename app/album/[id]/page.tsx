@@ -55,8 +55,7 @@ export default async function AlbumPage({ params }: { params: Promise<{ id: stri
                 const base = "http://res.cloudinary.com/nvzf/image/upload"
                 const src = `${base}/w_375,h_300,dpr_2.0,c_fill,g_faces/v${version}/${public_id}.jpg`
                 const viewURL = `${base}/v${version}/${public_id}.jpg`
-                const randomNumber = Math.floor(Math.random() * 4) + 4
-                const shouldRenderParagraph = (index + 1) % randomNumber === 0
+                const shouldRenderParagraph = (index + 1) % 5 === 0
 
                 const currentQuote = quotes[quoteIndex]
 
