@@ -8,7 +8,7 @@ import { useRef, useEffect } from "react";
 
 export default function Albums() {
   const pathname = usePathname();
-  const scrollRef = useRef(null);
+  const scrollRef = useRef<HTMLDivElement>(null); // Especificamos el tipo
 
   // Restaurar el scroll al renderizar
   useEffect(() => {
