@@ -4,10 +4,7 @@
 
 @layer base {
   html,
-  body,
-  #__next {
-    @apply text-white;
-    height: 100%;
-    scroll-behavior: smooth;
+  body {
+    @apply bg-black text-white scroll-smooth;
   }
 }

@@ -2,7 +2,6 @@ export const routes = {
   root: 'mordisco',
   home: '/album/2022MAY',
   albums: '/album/2022MAY', // First album
-  defaultCover: '/default-cover.gif',
 }
 
 const coverTrans = 'https://res.cloudinary.com/nvzf/image/upload/w_200,ar_1:1,c_fill,g_auto'
