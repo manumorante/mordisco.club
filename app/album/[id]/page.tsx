@@ -3,6 +3,7 @@ import { ALBUMS, quotes, routes } from "@/data"
 import Link from "next/link"
 import Image from "next/image"
 import { Fragment } from "react"
+import { Albums } from "@/components"
 
 export function generateStaticParams() {
   return ALBUMS.map((album) => ({
@@ -25,17 +26,7 @@ export default async function AlbumPage({ params }: { params: Promise<{ id: stri
 
   return (
     <div className="Album">
-      <div className="flex gap-2 px-3 pb-3 overflow-x-auto lg:justify-center">
-        {ALBUMS.map((album) => (
-          <Link
-            className="bg-black-700 lg:hover:bg-black-500 transition-colors px-3 py-1.5 text-sm leading-tight uppercase rounded-lg flex items-center justify-center whitespace-nowrap"
-            href={`/album/${album.folder}`}
-            key={album.folder}
-          >
-            <span>{album.artists[0]}</span>
-          </Link>
-        ))}
-      </div>
+      <Albums />
       {album && (
         <div className="p-5">
           <h1 className="font-extralight text-4xl sm:text-6xl lg:text-center uppercase leading-none my-5">
