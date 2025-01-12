@@ -6,21 +6,24 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useEffect } from "react";
 
+// Variable para almacenar la posición del scroll
+let scrollPosition = 0;
+
 export default function Albums() {
   const pathname = usePathname();
-  const scrollRef = useRef<HTMLDivElement>(null); // Especificamos el tipo
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   // Restaurar el scroll al renderizar
   useEffect(() => {
     if (scrollRef.current) {
-      scrollRef.current.scrollLeft = scrollRef.current.scrollPosition || 0;
+      scrollRef.current.scrollLeft = scrollPosition;
     }
   }, []);
 
   // Guardar la posición del scroll
   const handleScroll = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollPosition = scrollRef.current.scrollLeft;
+      scrollPosition = scrollRef.current.scrollLeft;
     }
   };
 
