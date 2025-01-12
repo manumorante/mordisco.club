@@ -1,9 +1,8 @@
-import { getAlbums } from 'lib/cloudinary/getAlbums'
-import { AlbumCardList, BigPhoto, AlbumSection } from 'components/albums'
-import { Header, Modal } from 'components/ui'
-import { useModal } from 'lib'
+import { getAlbums } from '@/lib/cloudinary/getAlbums'
+import { AlbumCardList, BigPhoto, AlbumSection } from '@/components'
+import { Header, Modal } from '@/components'
+import { useModal } from '@/lib'
 import { useRouter } from 'next/router'
-import Container from '@/components/ui/Container'
 import { useEffect, useState } from 'react'
 
 export async function getStaticProps() {
@@ -45,9 +44,9 @@ function HomePage({ albums }: { albums: any[] }) {
       <AlbumCardList isTop={isTop} albums={albums} activeID={album.folder} />
 
       {album && (
-        <Container>
+        <div className='mx-auto max-w-6xl px-5 h-full'>
           <AlbumSection album={album} openPhoto={openPhoto} />
-        </Container>
+        </div>
       )}
     </>
   )

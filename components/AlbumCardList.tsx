@@ -1,7 +1,6 @@
 import { AlbumType } from '@/types'
 import cx from 'clsx'
-import Container from '../ui/Container'
-import AlbumCard from './AlbumCard'
+import { AlbumCard } from '@/components'
 
 type Props = {
   albums: AlbumType[]

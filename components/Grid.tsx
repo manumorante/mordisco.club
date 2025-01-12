@@ -1,8 +1,8 @@
-import React, { useRef, useState, useEffect } from 'react'
-import { photoUrl } from 'lib/cloudinary/url'
+import { useRef, useState, useEffect } from 'react'
 import cx from 'clsx'
-import { getGridItem } from 'lib'
-import { Quote } from 'components/ui'
+import { photoUrl } from '@/lib/cloudinary/url'
+import { getGridItem } from '@/lib'
+import { Quote } from '@/components'
 import { GridType } from '@/types'
 
 type Props = {

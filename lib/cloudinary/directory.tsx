@@ -1,4 +1,4 @@
-import { client } from 'lib/cloudinary/client'
+import { client } from '@/lib/cloudinary/client'
 import { routes } from 'data'
 import { ImageApiType, ImageType } from '@/types'
 

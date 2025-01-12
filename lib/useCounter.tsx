@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { parseZero } from 'lib'
+import { parseZero } from '@/lib'
 import { useEffect } from 'react'
 
 /**

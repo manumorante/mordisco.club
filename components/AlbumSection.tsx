@@ -1,5 +1,5 @@
-import { Title } from '@/components/albums'
-import { Grid } from 'components/ui'
+import Title from './Title'
+import { Grid } from '@/components'
 
 interface Props {
   album: {

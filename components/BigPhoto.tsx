@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { photoBigURL } from 'lib/cloudinary/url'
+import { photoBigURL } from '@/lib/cloudinary/url'
 import { ImageType } from '@/types'
 
 interface PhotoStateType {

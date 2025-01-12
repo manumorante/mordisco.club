@@ -3,7 +3,7 @@ import { useCounter, largestWord } from '@/lib'
 import cx from 'clsx'
 
 interface Props {
-  style: any // TODO: style type?
+  style: any
 }
 
 function Quote({ style }: Props) {
@@ -17,10 +17,6 @@ function Quote({ style }: Props) {
         'Quote',
         'bg-gradient-to-br',
         'from-neutral-900',
-        // 'bg-[url("/bg-2867.jpg")]',
-        // 'bg-fixed',
-        // 'bg-cover',
-        // 'bg-right-top',
         'px-11',
         'py-28',
         'sm:px-10',

@@ -1,5 +1,5 @@
 import { ALBUMS } from 'data'
-import { getImagesFromFolder } from 'lib/cloudinary/directory'
+import { getImagesFromFolder } from '@/lib/cloudinary/directory'
 import { AlbumType } from '@/types'
 
 export async function getAlbums() {

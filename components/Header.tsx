@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import cx from 'clsx'
-import { Logo } from 'components/ui'
+import { Logo } from '@/components'
 
 function Header({ isTop }: { isTop: boolean }) {
   const mainCx = cx(

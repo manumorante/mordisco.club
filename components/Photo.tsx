@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { SpinnerWiggle } from 'components/ui'
+import { SpinnerWiggle } from '@/components'
 import cx from 'clsx'
 import { ImageType } from '@/types'
 
