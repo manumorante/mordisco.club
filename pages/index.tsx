@@ -1,7 +1,7 @@
 import { getAlbums } from '@/lib/cloudinary/getAlbums'
 import { AlbumCardList, BigPhoto, AlbumSection } from '@/components'
 import { Header, Modal } from '@/components'
-import { useModal } from '@/lib'
+import useModal from '@/lib/useModal'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 

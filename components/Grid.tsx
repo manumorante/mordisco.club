@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 import cx from 'clsx'
 import { photoUrl } from '@/lib/cloudinary/url'
-import { getGridItem } from '@/lib'
+import getGridItem from '@/lib/getGridItem'
 import { Quote } from '@/components'
 import { GridType } from '@/types'
 

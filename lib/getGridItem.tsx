@@ -1,4 +1,4 @@
-import { GRID } from '@/lib/grid'
+import { GRID } from '@/grid.config'
 
 function getNearWidth(value: number) {
   const values = GRID.widths

@@ -1,6 +1,5 @@
 import cx from 'clsx'
 import Link from 'next/link'
-import { routes } from 'data'
 import { photoUrl } from '@/lib/cloudinary/url'
 import { AlbumType } from '@/types'
 
@@ -15,9 +14,7 @@ function AlbumCard({ album, active, className }: Props) {
 
   const width = 230
   const height = width
-  const coverSrc = album?.cover
-    ? photoUrl({ url: album.cover, width, height, dpr: 2 })
-    : routes.defaultCover
+  const coverSrc = photoUrl({ url: album.cover, width, height, dpr: 2 })
 
   return (
     <Link

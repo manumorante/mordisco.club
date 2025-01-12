@@ -1,12 +1,11 @@
-import { useState } from 'react'
-import { parseZero } from '@/lib'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
-/**
- * useCounter
- */
 export default function useCounter(key: string): number {
   const [value, setValue] = useState<number>(0)
+
+  function parseZero(input: any): number {
+    return typeof input === 'number' ? input : parseFloat(input) || 0
+  }
 
   useEffect(() => {
     const local = localStorage.getItem(key)

@@ -1,9 +1,15 @@
 import { quotes } from 'data'
-import { useCounter, largestWord } from '@/lib'
+import useCounter from '@/lib/useCounter'
 import cx from 'clsx'
 
 interface Props {
   style: any
+}
+
+function largestWord(text: string) {
+  const array = text.split(' ')
+  const sorted = array.sort((a, b) => b.length - a.length)
+  return sorted[0]
 }
 
 function Quote({ style }: Props) {

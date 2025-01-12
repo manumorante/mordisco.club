@@ -5,9 +5,9 @@ import 'css/globals.css'
 
 const meta = {
   title: 'Mordisco Club',
-  description: 'Fotos de las fiestas de música electrónica Mordisco CLub en Granada',
+  description: 'Fotos de las fiestas de música electrónica Mordisco Club en Granada',
   url: 'https://mordisco.club/',
-  image: '/og/mordisco.png',
+  image: '/mordisco-club-og.png',
   bgcolor: '#000000',
   ga: 'G-WDX93TJEJY',
 }

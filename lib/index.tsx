@@ -1,5 +1,0 @@
-export { default as getGridItem } from './getGridItem'
-export { default as parseZero } from './parseZero'
-export { default as useCounter } from './useCounter'
-export { default as largestWord } from './largestWord'
-export { default as useModal } from './useModal'
