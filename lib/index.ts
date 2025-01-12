@@ -1,0 +1,1 @@
+export { cloudinary } from "./cloudinary"
