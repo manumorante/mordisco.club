@@ -23,10 +23,13 @@ export default async function AlbumPage({ params }: { params: Promise<{ id: stri
   })
 
   let quoteIndex = 0
+  let intervalCount = 1
+  let randomInterval = 4
 
   return (
     <div className="Album">
       <Albums />
+
       {album && (
         <div className="p-5">
           <h1 className="font-extralight text-4xl sm:text-6xl lg:text-center uppercase leading-none my-5">
@@ -40,27 +43,27 @@ export default async function AlbumPage({ params }: { params: Promise<{ id: stri
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {images.resources.map(
-              (
-                {
-                  url,
-                  public_id,
-                  version,
-                }: {
-                  url: string
-                  public_id: string
-                  version: number
-                },
-                index: number
-              ) => {
+              ({
+                url,
+                public_id,
+                version,
+              }: {
+                url: string
+                public_id: string
+                version: number
+              }) => {
                 const base = "http://res.cloudinary.com/nvzf/image/upload"
-                const src = `${base}/w_375,h_300,dpr_2.0,c_fill,g_faces/v${version}/${public_id}.jpg`
+                const src = `${base}/w_390,h_280,dpr_2.0,c_fill,g_faces/v${version}/${public_id}.jpg`
                 const viewURL = `${base}/v${version}/${public_id}.jpg`
-                const shouldRenderParagraph = (index + 1) % 5 === 0
-
+                const shouldRenderQuote = intervalCount === randomInterval
                 const currentQuote = quotes[quoteIndex]
 
-                if (shouldRenderParagraph) {
+                intervalCount++
+
+                if (shouldRenderQuote) {
                   quoteIndex = (quoteIndex + 1) % quotes.length
+                  randomInterval = Math.floor(Math.random() * 3) + 4
+                  intervalCount = 0
                 }
 
                 return (
@@ -75,11 +78,14 @@ export default async function AlbumPage({ params }: { params: Promise<{ id: stri
                       />
                     </Link>
 
-                    {shouldRenderParagraph && (
-                      <div className="w-full min-h-[50vh] Quote bg-gradient-to-br from-neutral-900 px-11 py-28 sm:px-10 sm:py-14 lg:px-14 lg:py-20 rounded-md flex items-center">
-                        <p className="font-serif text-neutral-300 mb-4 text-4xl sm:text-5xl">
-                          {currentQuote.text}.{randomNumber}.{index}
-                        </p>
+                    {shouldRenderQuote && (
+                      <div className="w-full min-h-[50vh] lg:min-h-[auto] Quote bg-gradient-to-br from-neutral-900 px-11 py-28 sm:px-10 sm:py-14 rounded-md flex items-center">
+                        <div>
+                          <p className="font-serif text-neutral-300 mb-4 text-4xl lg:text-3xl">
+                            {currentQuote.text}
+                          </p>
+                          <p className="text-xl text-neutral-400">{currentQuote.author}</p>
+                        </div>
                       </div>
                     )}
                   </Fragment>
