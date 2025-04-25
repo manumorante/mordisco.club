@@ -1,13 +1,16 @@
 import { QUOTES } from '@/data/quotes'
 import { Quote } from '@/types'
 
-let contador = 0
+let counter = 0
+let quoteIndex = 0
 
 export function getQuote(): Quote | null {
-  contador++
-  if (contador === 6) {
-    contador = 0
-    return QUOTES[Math.floor(Math.random() * QUOTES.length)]
+  counter++
+  if (counter === 6) {
+    counter = 0
+    const quote = QUOTES[quoteIndex]
+    quoteIndex = (quoteIndex + 1) % QUOTES.length
+    return quote
   }
 
   return null
