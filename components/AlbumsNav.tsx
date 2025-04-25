@@ -12,15 +12,17 @@ export default function AlbumsNav() {
   const [ref] = useScrollRestoration()
 
   return (
-    <div ref={ref} className="sticky top-3 flex gap-2 overflow-x-auto px-3 pb-3 lg:justify-center">
+    <div
+      ref={ref}
+      className="no-scrollbar sticky top-3 flex gap-2 overflow-x-auto px-3 pb-3 lg:justify-center">
       {albums.map((album) => {
         const href = `/album/${album.folder}`
         const isActive = pathname === href
         const className = cx(
           { 'bg-neutral-800 lg:hover:bg-black-500': !isActive },
-          { 'bg-white text-black font-bold lg:hover:bg-black-500': isActive },
+          { 'bg-white text-black  lg:hover:bg-black-500': isActive },
           'transition-colors px-3 py-1.5 text-sm leading-tight uppercase rounded-lg',
-          'flex items-center justify-center whitespace-nowrap',
+          'flex items-center justify-center whitespace-nowrap ',
         )
         return (
           <Link className={className} href={href} key={album.folder}>
