@@ -1,3 +1,6 @@
-export { default as Header } from "./Header"
-export { default as Logo } from "./Logo"
-export { default as Albums } from "./Albums"
+export { default as AlbumsNav } from './AlbumsNav'
+export { default as Header } from './Header'
+export { default as ImageItem } from './ImageItem'
+export { default as ImagesGrid } from './ImagesGrid'
+export { default as Logo } from './Logo'
+export { default as QuoteBox } from './QuoteBox'

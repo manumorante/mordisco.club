@@ -1,6 +1,6 @@
-import { ALBUMS } from "@/data"
-import { NextResponse } from "next/server"
-import type { NextRequest } from "next/server"
+import { ALBUMS } from '@/data/albums'
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
   const folder = ALBUMS[0].folder
@@ -9,5 +9,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: "/",
+  matcher: '/',
 }
