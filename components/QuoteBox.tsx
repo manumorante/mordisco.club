@@ -1,4 +1,4 @@
-import { getQuote } from '@/lib/quotes'
+import { getQuote } from '@/services/quotes'
 
 export default function QuoteBox() {
   const quote = getQuote()

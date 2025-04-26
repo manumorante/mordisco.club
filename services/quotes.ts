@@ -6,6 +6,7 @@ let quoteIndex = 0
 
 export function getQuote(): Quote | null {
   counter++
+
   if (counter === 6) {
     counter = 0
     const quote = QUOTES[quoteIndex]
@@ -14,4 +15,13 @@ export function getQuote(): Quote | null {
   }
 
   return null
+}
+
+export function resetQuotes(): void {
+  counter = 0
+  quoteIndex = 0
+}
+
+export function getTotalQuotes(): number {
+  return QUOTES.length
 }

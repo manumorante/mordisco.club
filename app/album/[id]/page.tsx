@@ -1,6 +1,6 @@
 import { AlbumsNav, ImagesGrid } from '@/components'
-import { getAlbums, getArtistsByFolder } from '@/lib/albums'
-import { getImagesFromFolder } from '@/lib/cloudinary'
+import { getAlbums, getArtistsByFolder } from '@/services/albums'
+import { getImagesFromFolder } from '@/config/cloudinary'
 
 export function generateStaticParams() {
   const albums = getAlbums()

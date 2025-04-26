@@ -1,7 +1,7 @@
 'use client'
 
 import { useScrollRestoration } from '@/hooks/useScrollRestoration'
-import { getAlbums } from '@/lib/albums'
+import { getAlbums } from '@/services/albums'
 import cx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'

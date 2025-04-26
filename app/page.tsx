@@ -1,4 +1,4 @@
-import { getAlbums } from '@/lib/albums'
+import { getAlbums } from '@/services/albums'
 import Link from 'next/link'
 
 export default function Home() {
